@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.back-img-home{
+  width: 100%;
+}
+
+.container-home{
+  display: flex;
+  flex: 1;
+  padding: 60px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logo{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.logo-home{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1;
+  min-width: 210px;
+}
+
+.dynamic-content{
+  flex: 2;
+  padding-top: 80px;
+  min-width: 320px;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input{  
+  position: relative;
+}
+
+.search-input input{
+  width: calc(100% - 40px);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #cecece;
+  font-size: 18pt;
+}
+
+.icon-search{
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 22pt;
+  color: #c1c1c1;
+}
+
+.genre-search{
+  position: absolute;
+  top: 25px;
+  right: 70px;
+  font-size: 18pt;
+  border: none;
+  cursor: pointer;
+}
+
+.genre-search option{
+  border: none !important;
+}
+
+.order-search{
+  font-size: 18pt;
+  border: none;
+  cursor: pointer;
+}
+
+.order-content{
+  padding-top: 30px;
+}
+
+.min-movie{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.image-movie{
+  flex: 1;
+}
+
+.image-movie img{
+  width: 100%;
+}
+
+.info-movie{
+  flex: 3;
+  padding: 0 15px;
+}
+
+.info-movie h3{
+  margin-top: 0;
+  color: #303030;
+  font-size: 18pt;
+}
+
+.info-movie h4{
+  margin-top: 0;
+  font-size: 13pt;
+  margin-bottom: 10px;
+}
+
+.info-movie p{
+  color: #545454;
+  font-family: 'Ubuntu Light';
+}
+
+.info-release-date{
+  color: #be468f;
+}
+
+.info-genre{
+  color: #d59257;
+}
+
+.icon-info-release-date, .icon-info-genre{
+  margin-right: 10px;
+}
+
+.paginate{
+  display: flex;
+  justify-content: center;
+}
+
+.paginate span{
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.paginate svg{
+  font-size: 18pt;
+  margin: 0 15px;
+  cursor: pointer;
+  color: #565656;
+}
+
+.paginate svg:hover{
+  opacity: 0.7;
+}
+
+.trend .min-movie:hover {
+  transform: scale(1.05) !important;
+}
+
+@media(max-width: 440px){
+  .image-movie img{
+    width: calc(100vw - 50px);
+  }
+}
+
+@media(min-width: 1000px){  
+  .container-home{
+    max-width: 60vw;
+  }
+
+  
+}

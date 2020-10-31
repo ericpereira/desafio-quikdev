@@ -35,7 +35,7 @@ const Home = () => {
     if(event.target.value === ''){
       //carrega trends
       setIsLoaded(false)
-      await api.get('http://127.0.0.1:8000/api/list')
+      await api.get('/api/list')
       .then(response => {
         //console.log(response.data.data.results)
         setTrends(response.data.data.results.sort(function(a:any, b:any){
@@ -118,7 +118,7 @@ const Home = () => {
     async function init () {
       //carrega os gêneros    
       if(!genres){
-        api.get('http://127.0.0.1:8000/api/genres')
+        api.get('/api/genres')
               .then(response => {
                 //console.log(response.data.data)
                 setGenres(response.data.data)
@@ -127,7 +127,7 @@ const Home = () => {
       
       if(!trends){
         //carrega trends
-        await api.get('http://127.0.0.1:8000/api/list')
+        await api.get('/api/list')
           .then(response => {
             //console.log(response.data.data.results)
             setTrends(response.data.data.results.sort(function(a:any, b:any){

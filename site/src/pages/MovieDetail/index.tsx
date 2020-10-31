@@ -26,7 +26,7 @@ const MovieDetail = () => {
     async function init (){
       //carrega os gêneros    
       if(!genres){
-        api.get('http://127.0.0.1:8000/api/genres')
+        api.get('/api/genres')
               .then(response => {
                 //console.log(response.data.data)
                 setGenres(response.data.data)
@@ -34,7 +34,7 @@ const MovieDetail = () => {
       }
       
       //carrega a base url das imagens
-      await api.get('http://127.0.0.1:8000/api/detail/'+movie_id)
+      await api.get('/api/detail/'+movie_id)
               .then(response => {
                 //console.log(response.data.data)
                 setMovie(response.data.data)

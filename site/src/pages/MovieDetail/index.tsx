@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 import logo from '../../assets/images/logo-ericflix.png'
 
@@ -9,8 +9,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import './styles.css'
+import api from '../../services/api'
+
+import { Genre, MinMovieInterface } from '../../interfaces'
+
+
 
 const MovieDetail = () => {
+  const [movie, setMovie] = useState<MinMovieInterface>()
+  const [genres, setGenres] = useState<Genre[]>()
+
+  const { movie_id } = useParams<{movie_id: string}>()
+  
+  useEffect(()=>{
+    //inicializa estados
+    async function init (){
+      //carrega os gêneros    
+      if(!genres){
+        api.get('http://127.0.0.1:8000/api/genres')
+              .then(response => {
+                //console.log(response.data.data)
+                setGenres(response.data.data)
+              })
+      }
+      
+      //carrega a base url das imagens
+      await api.get('http://127.0.0.1:8000/api/detail/'+movie_id)
+              .then(response => {
+                //console.log(response.data.data)
+                setMovie(response.data.data)
+              })
+    }
+    
+    init()
+  },[genres, movie_id])
+
+
 
   return (
     <>
@@ -23,7 +57,7 @@ const MovieDetail = () => {
           <img src={logo} alt="logo"/>
         </nav>
         <div className='content-movie'>
-          {/* <MinMovie /> */}
+          {movie && <MinMovie {...movie} genres_all={genres} />}
         </div>     
       </div>
     </>

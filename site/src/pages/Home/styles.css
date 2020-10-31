@@ -67,6 +67,7 @@ a {
   right: 30px;
   font-size: 22pt;
   color: #c1c1c1;
+  cursor: pointer;
 }
 
 .genre-search{
@@ -163,6 +164,16 @@ a {
 
 .trend .min-movie:hover {
   transform: scale(1.05) !important;
+}
+
+.content-load{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.load-gif{
+  height: 80px;
 }
 
 @media(max-width: 440px){
